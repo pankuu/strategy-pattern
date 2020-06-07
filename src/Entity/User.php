@@ -146,7 +146,7 @@ class User implements UserInterface
 
     public function setImage(?string $image): self
     {
-        $this->image = $image;
+        $this->image = 'images/'.$image;
 
         return $this;
     }

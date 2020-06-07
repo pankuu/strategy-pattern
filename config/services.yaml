@@ -25,3 +25,25 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    context:
+        class: App\Service\Context
+
+    App\Controller\MainController:
+        arguments:
+            - '@context'
+
+    App\Strategy\AgeStrategy\YoungStrategy:
+        public: true
+        tags:
+            - { name: age_strategy }
+
+    App\Strategy\AgeStrategy\ChildStrategy:
+        public: true
+        tags:
+            - { name: age_strategy }
+
+    App\Strategy\AgeStrategy\OldStrategy:
+        public: true
+        tags:
+            - { name: age_strategy }
