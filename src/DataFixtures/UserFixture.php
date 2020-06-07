@@ -21,14 +21,13 @@ class UserFixture extends BaseFixture
         $this->createMany(5, 'main_users', function ($i) {
             $user = new User();
             $user->setEmail(sprintf('strategy%d@example.com', $i));
-            $user->setFirstName($this->faker->firstName);
+            $user->setFirstName($this->faker->firstName('male'));
             $user->setAge($this->faker->biasedNumberBetween(1, 30));
 
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 'foo'
             ));
-
 
             return $user;
         });
