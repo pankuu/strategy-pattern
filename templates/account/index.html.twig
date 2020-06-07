@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menage Account!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('css/account.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="main-article mb-5 pb-3">
+                    <h1 class="text-left mt-2">Welcome {{ app.user.firstName }}!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
