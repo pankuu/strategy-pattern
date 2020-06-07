@@ -19,10 +19,10 @@ class AccountController extends BaseController
      */
     public function index(LoggerInterface $logger)
     {
-        $logger->debug('Account page for '.$this->getUser()->getEmail());
-
-        return $this->render('account/index.html.twig', [
-
+        $logger->info('Account page for '.$this->getUser()->getEmail(), [
+            'user' => $this->getUser()
         ]);
+
+        return $this->render('account/index.html.twig');
     }
 }
